@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Deep Agricultural Green */
+    --color-primary: #2D5016; /* green-800 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors - Clean Canvas */
+    --color-secondary: #F8F9FA; /* gray-50 */
+    --color-secondary-foreground: #1A1A1A; /* gray-900 */
+    
+    /* Accent Colors - Rich Earth Brown */
+    --color-accent: #8B4513; /* brown-700 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Background Colors */
+    --color-background: #FEFEFE; /* white */
+    --color-foreground: #1A1A1A; /* gray-900 */
+    
+    /* Surface Colors - Subtle Green Tint */
+    --color-card: #F5F7F0; /* green-50 */
+    --color-card-foreground: #1A1A1A; /* gray-900 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A1A1A; /* gray-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F5F7F0; /* green-50 */
+    --color-muted-foreground: #4A5568; /* gray-600 */
+    
+    /* Border & Input */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #E5E7EB; /* gray-200 */
+    --color-ring: #2D5016; /* green-800 */
+    
+    /* Semantic Colors */
+    --color-success: #16A34A; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #1A1A1A; /* gray-900 */
+    
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --color-background: #0A0A0A; /* gray-950 */
+    --color-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-card: #1A1A1A; /* gray-900 */
+    --color-card-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-popover: #1A1A1A; /* gray-900 */
+    --color-popover-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-primary: #4ADE80; /* green-400 */
+    --color-primary-foreground: #0A0A0A; /* gray-950 */
+    
+    --color-secondary: #27272A; /* gray-800 */
+    --color-secondary-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-accent: #D2691E; /* chocolate */
+    --color-accent-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-muted: #27272A; /* gray-800 */
+    --color-muted-foreground: #A1A1AA; /* gray-400 */
+    
+    --color-border: #27272A; /* gray-800 */
+    --color-input: #27272A; /* gray-800 */
+    --color-ring: #4ADE80; /* green-400 */
+    
+    --color-success: #22C55E; /* green-500 */
+    --color-success-foreground: #0A0A0A; /* gray-950 */
+    
+    --color-warning: #FCD34D; /* amber-300 */
+    --color-warning-foreground: #0A0A0A; /* gray-950 */
+    
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #F5F5F5; /* gray-100 */
+    
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #F5F5F5; /* gray-100 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+  }
+  
+  button {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  .font-accent {
+    font-family: 'Merriweather', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Header Component Styles */
+  .header-container {
+    @apply fixed top-0 left-0 right-0 z-40 bg-card shadow-md;
+  }
+  
+  .header-content {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .header-inner {
+    @apply flex items-center justify-between h-16;
+  }
+  
+  .header-logo {
+    @apply flex items-center space-x-2;
+  }
+  
+  .header-logo-icon {
+    @apply w-10 h-10 rounded-lg flex items-center justify-center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    box-shadow: 0 4px 12px rgba(45, 80, 22, 0.15);
+  }
+  
+  .header-logo-text {
+    @apply text-xl font-bold text-primary;
+  }
+  
+  .header-logo-tagline {
+    @apply text-xs text-muted-foreground;
+  }
+  
+  .header-nav {
+    @apply hidden lg:flex items-center space-x-1;
+  }
+  
+  .header-nav-link {
+    @apply px-4 py-2 rounded-lg text-sm font-medium text-foreground transition-all duration-300;
+  }
+  
+  .header-nav-link:hover {
+    @apply bg-muted text-primary;
+  }
+  
+  .header-nav-link.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .header-actions {
+    @apply flex items-center space-x-3;
+  }
+  
+  .header-mobile-toggle {
+    @apply lg:hidden fixed top-4 right-4 z-50 p-2 rounded-lg bg-card shadow-md;
+  }
+  
+  /* Mobile Menu Styles */
+  .mobile-menu-overlay {
+    @apply fixed inset-0 z-40 bg-background;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .mobile-menu-overlay.open {
+    transform: translateX(0);
+  }
+  
+  .mobile-menu-content {
+    @apply flex flex-col h-full pt-20 px-6 pb-6;
+  }
+  
+  .mobile-menu-nav {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .mobile-menu-link {
+    @apply px-4 py-3 rounded-lg text-base font-medium text-foreground transition-all duration-300;
+  }
+  
+  .mobile-menu-link:hover {
+    @apply bg-muted text-primary;
+  }
+  
+  .mobile-menu-link.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  /* Bottom Navigation Styles */
+  .bottom-nav-container {
+    @apply fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-card shadow-md;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .bottom-nav-content {
+    @apply flex items-center justify-around h-16 px-2;
+  }
+  
+  .bottom-nav-item {
+    @apply flex flex-col items-center justify-center flex-1 py-2 transition-all duration-300;
+  }
+  
+  .bottom-nav-item:hover {
+    @apply text-primary;
+  }
+  
+  .bottom-nav-item.active {
+    @apply text-primary;
+  }
+  
+  .bottom-nav-icon {
+    @apply mb-1;
+  }
+  
+  .bottom-nav-label {
+    @apply text-xs font-medium;
+  }
+  
+  /* Organic Shadows */
+  .shadow-organic {
+    box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  }
+  
+  .shadow-organic-lg {
+    box-shadow: 0 8px 24px rgba(45, 80, 22, 0.15);
+  }
+  
+  /* Smooth Transitions */
+  .transition-organic {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* Content Spacing */
+  .main-content {
+    @apply pt-16 pb-20 lg:pb-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

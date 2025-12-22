@@ -95,6 +95,7 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
+                color="green"
                 iconName="ArrowRight"
                 iconPosition="right"
                 onClick={() => router.push(heroSlides?.[currentSlide]?.ctaPath)}>
